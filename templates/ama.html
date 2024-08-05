@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Ask me anything about {{name}}</h2>
+
+<form action = "/ama" method = "post" onsubmit="showspinner();">
+    <input type="hidden" value="{{name}}" id="name" name="name">
+        <input type="text" name="question" id="question" value="{{question}}"/>
+        <input type="submit" value="Ask">
+    </form>
+
+{% if answer %}
+<p>
+    {{ answer }}
+</p>
+{% endif %}
+
+
+<a href="/">Load a different document</a>
+
+
+{% endblock %}
